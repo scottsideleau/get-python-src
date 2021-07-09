@@ -62,21 +62,16 @@ Debian-based and MacOS (Homebrew) dependencies should be similarly named.
 
     NOTE: The <params> can be stacked (any order) for increased effect.
 
-### Setup the Environment (if you don't specify LDFLAGS in configure)
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/python3.8/lib
-export PATH=$PATH:/opt/python3.8/bin
-python3.8 --version
-
 ### References
-Most complete guide (includes LDFLAG hint):
-https://danieleriksson.net/2017/02/08/how-to-install-latest-python-on-centos/
+* Most complete guide (includes LDFLAG hint):
+  https://danieleriksson.net/2017/02/08/how-to-install-latest-python-on-centos/
 
-Info on Additional build flags:
-https://realpython.com/installing-python/#how-to-build-python-from-source-code
+* Info on Additional build flags:
+  https://realpython.com/installing-python/#how-to-build-python-from-source-code
 
-Clarification on build prefixes:
-https://www.devdungeon.com/content/how-build-python-source
+* Clarification on build prefixes:
+  https://www.devdungeon.com/content/how-build-python-source
 
-Find Python source downloads:
-https://www.python.org/downloads/
+* Find Python source downloads:
+  https://www.python.org/downloads/
 
