@@ -63,7 +63,7 @@ Debian-based and MacOS (Homebrew) dependencies should be similarly named.
     NOTE: The <params> can be stacked (any order) for increased effect.
 
 ### References
-* Most complete guide (includes LDFLAG hint):
+* Most complete guide (includes LDFLAG hint):<br/>
   https://danieleriksson.net/2017/02/08/how-to-install-latest-python-on-centos/
 
 * Info on Additional build flags:<br/>
