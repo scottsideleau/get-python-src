@@ -6,7 +6,7 @@ WELCOME="
 echo "${WELCOME}"
 
 USAGE="
-  ./fetch-python-srcbuild.sh <version> <params>
+  ./get-python-src.sh <version> <params>
 
   The <version> is required:
     - Major/Minor         e.g. 3.6      Fetches latest release
