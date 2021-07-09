@@ -6,11 +6,11 @@ discretion, a major/minor/patch) version of Python to be downloaded and
 optionally unpacked, built, and installed into your local /opt directory.
 
 ### Assumptions
-  * You have access to BASH on Linux or MacOS
+  * You have access to Bourne-Again SHell (BASH) on Linux or MacOS
   * You have privileges to read/write to /opt
   * You have a desire to use:
-    * The latest patch of a Python release (e.g. 3.6.14)
-    * A specific patch of a Python release (e.t. 3.6.8)
+    * The latest patch of a Python release (e.g. 3.6)
+    * A specific patch of a Python release (e.g. 3.6.8)
   * You have already installed the dependencies to build Python (see below)
 
 ### Generated Files
@@ -47,20 +47,20 @@ On Enterprise Linux, the following dependencies are needed:
 Debian-based and MacOS (Homebrew) dependencies should be similarly named.
 
 ### Using this Script
-  ./fetch-python-srcbuild.sh <version> <params>
+    ./fetch-python-srcbuild.sh <version> <params>
 
-  The <version> is required:
-    - Major/Minor         e.g. 3.6      Fetches latest release
-    - Major/Minor/Patch   e.g. 3.6.14   Fetches user-specified release
+    The <version> is required:
+      - Major/Minor         e.g. 3.6      Fetches latest release
+      - Major/Minor/Patch   e.g. 3.6.14   Fetches user-specified release
 
-  At least one <param> is required:
-    "fetch"   - Only fetch the source (.tgz)
-    "build"   - Fetch, unpack, & build the source (.so version)
-    "static"  - Build the source as static library (.a version)
-    "install" - Install the Python build to /opt/python<version>
-    "clean"   - Clean the src/ directory
+    At least one <param> is required:
+      "fetch"   - Only fetch the source (.tgz)
+      "build"   - Fetch, unpack, & build the source (.so version)
+      "static"  - Build the source as static library (.a version)
+      "install" - Install the Python build to /opt/python<version>
+      "clean"   - Clean the src/ directory
 
-  NOTE: The <params> can be stacked (any order) for increased effect.
+    NOTE: The <params> can be stacked (any order) for increased effect.
 
 ### Setup the Environment (if you don't specify LDFLAGS in configure)
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/python3.8/lib
