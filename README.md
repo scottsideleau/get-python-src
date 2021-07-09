@@ -66,12 +66,12 @@ Debian-based and MacOS (Homebrew) dependencies should be similarly named.
 * Most complete guide (includes LDFLAG hint):
   https://danieleriksson.net/2017/02/08/how-to-install-latest-python-on-centos/
 
-* Info on Additional build flags:
+* Info on Additional build flags:<br/>
   https://realpython.com/installing-python/#how-to-build-python-from-source-code
 
-* Clarification on build prefixes:
+* Clarification on build prefixes:<br/>
   https://www.devdungeon.com/content/how-build-python-source
 
-* Find Python source downloads:
+* Find Python source downloads:<br/>
   https://www.python.org/downloads/
 
