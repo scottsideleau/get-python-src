@@ -189,11 +189,13 @@ then
   fi
   if [ ${STATIC} = true ];
   then
+    DYNOPT=""
     DYNLIB=""
   else
+    DYNOPT="--enable-shared"
     DYNLIB="-Wl,-rpath /opt/python${VER}/lib"
   fi
-  ../configure --enable-shared --with-lto --with-ensurepip=install \
+  ../configure ${DYNOPT} --with-lto --with-ensurepip=install \
     --enable-optimizations --prefix=/opt/python${VER} \
     LDFLAGS="${DYNLIB}"
   make -j $(getconf _NPROCESSORS_ONLN)
