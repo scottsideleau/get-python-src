@@ -63,10 +63,10 @@ Other Debian-based distributions should have similarly named dependencies.
 On MacOS (Homebrew), the following dependencies are needed:
 
     brew update && brew install \
-      openssl    \
-      readline   \
-      sqlite3    \
-      xz         \
+      openssl                   \
+      readline                  \
+      sqlite3                   \
+      xz                        \
       zlib
 
 Additional MacOS environment configuration may be required to use all features:
