@@ -1,5 +1,5 @@
 # Get Python from Source
-## Easily fetch, build, and install any version of Python from source.
+## Easily fetch, build, and install any version of Python from source
 
 This rootless script enables you to specify a major/minor (or, at your 
 discretion, a major/minor/patch) version of Python to be downloaded and
@@ -9,8 +9,8 @@ optionally unpacked, built, and installed into your local /opt directory.
   * You have access to Bourne-Again SHell (BASH) on Linux or MacOS
   * You have privileges to read/write to /opt
   * You have a desire to use:
-    * The latest patch of a Python release (e.g. 3.6)
-    * A specific patch of a Python release (e.g. 3.6.8)
+    * the latest patch of a Python release (e.g. 3.6), or
+    * a specific patch of a Python release (e.g. 3.6.8)
   * You have already installed the dependencies to build Python (see below)
 
 ### Generated Files
@@ -26,6 +26,7 @@ src/Python-N.NN/debug    | Directory for configuring/building Python version
 ### Install Dependencies to Build Python
 On Enterprise Linux, the following dependencies are needed:
 
+    sudo yum update
     sudo yum groups mark install "Development Tools"
     sudo yum groups mark convert "Development Tools"
     sudo yum groupinstall -y "Development Tools"
@@ -44,17 +45,44 @@ On Enterprise Linux, the following dependencies are needed:
       libpcap-devel  \
       expat-devel
 
-Debian-based dependencies should be similarly named.
+On Ubuntu, the following dependencies are needed:
+
+    sudo apt update && sudo apt install \
+      build-essential                   \
+      libncursesw5-dev                  \
+      libreadline-gplv2-dev             \
+      libssl-dev                        \
+      libgdbm-dev                       \
+      libc6-dev                         \
+      libsqlite3-dev                    \
+      libbz2-dev                        \
+      libffi-dev
+
+Other Debian-based distributions should have similarly named dependencies.
 
 On MacOS (Homebrew), the following dependencies are needed:
 
-    brew install openssl xz gdbm
+    brew update && brew install \
+      openssl    \
+      readline   \
+      sqlite3    \
+      xz         \
+      zlib
 
-Additional environment configuration may be required to use all features:
+Additional MacOS environment configuration may be required to use all features:
 
     export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
-    export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
-    export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
+    export PATH="/usr/local/opt/sqlite/bin:$PATH"
+
+    export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib:$LDFLAGS"
+    export LDFLAGS="-L/usr/local/opt/readline/lib:$LDFLAGS"
+    export LDFLAGS="-L/usr/local/opt/sqlite/lib:$LDFLAGS"
+    export LDFLAGS="-L/usr/local/opt/zlib/lib:$LDFLAGS"
+
+    export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include:$CPPFLAGS"
+    export CPPFLAGS="-I/usr/local/opt/readline/include:$CPPFLAGS"
+    export CPPFLAGS="-I/usr/local/opt/sqlite/include:$CPPFLAGS"
+    export CPPFLAGS="-I/usr/local/opt/zlib/include:$CPPFLAGS"
 
 ### Using this Script
     ./get-python-src.sh <version> <params>
