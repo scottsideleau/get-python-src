@@ -16,12 +16,12 @@ optionally unpacked, built, and installed into your local /opt directory.
 ### Generated Files
 This script, upon being executed, will generate locally:
 
-Directory/File   | Description
----              | ---
-downloads/       | Directory for Python source archives (.tgz)
-src/             | Directory for unpacked Python source files
-src/<ver>/debug  | Directory for configuring/building Python version
-/opt/python<ver> | Optionally, install directory for built Python version
+Directory/File           | Description
+---                      | ---
+downloads/               | Directory for Python source archives (.tgz)
+src/                     | Directory for unpacked Python source files
+src/Python-N.NN/debug    | Directory for configuring/building Python version
+/opt/pythonN.NN          | Optionally, install directory for built Python
 
 ### Install Dependencies to Build Python
 On Enterprise Linux, the following dependencies are needed:
@@ -44,7 +44,17 @@ On Enterprise Linux, the following dependencies are needed:
       libpcap-devel  \
       expat-devel
 
-Debian-based and MacOS (Homebrew) dependencies should be similarly named.
+Debian-based dependencies should be similarly named.
+
+On MacOS (Homebrew), the following dependencies are needed:
+
+    brew install openssl xz gdbm
+
+Additional environment configuration may be required to use all features:
+
+    export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+    export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
+    export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
 
 ### Using this Script
     ./get-python-src.sh <version> <params>

@@ -197,7 +197,7 @@ then
   $( mkdir Python-${VER}/debug >& /dev/null )
   pushd Python-${VER}/debug >& /dev/null
   echo "  Configuring ..."
-  $( mkdir --parents /opt/python${VER}/lib )
+  $( mkdir -p /opt/python${VER}/lib )
   if [ ! -d "/opt/python${VER}/lib" ];
   then
     echo "  Error: Unable to write to /opt"
