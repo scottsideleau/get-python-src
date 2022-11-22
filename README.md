@@ -45,6 +45,8 @@ On Enterprise Linux, the following dependencies are needed:
       libpcap-devel  \
       expat-devel
 
+NOTE: db4-devel is only required for Python2 builds.
+
 On Ubuntu, the following dependencies are needed:
 
     sudo apt update && sudo apt install \
