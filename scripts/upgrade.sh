@@ -11,7 +11,11 @@ FILE="requirements.txt"
 
 if [ ! -f $FILE ]; then
   ./bin/pip3 list --format freeze > $FILE
-  sed --in-place 's/==/>=/g' $FILE
+  if [ "$(uname)" = "Darwin" ]; then
+    sed -i '' 's/==/>=/g' $FILE
+  else
+    sed --in-place 's/==/>=/g' $FILE
+  fi
 fi
 
 ./bin/pip3 install --upgrade -r $FILE
