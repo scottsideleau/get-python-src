@@ -18,4 +18,4 @@ if [ ! -f $FILE ]; then
   fi
 fi
 
-./bin/pip3 install --upgrade -r $FILE
+./bin/pip3 install --upgrade --requirement $FILE
