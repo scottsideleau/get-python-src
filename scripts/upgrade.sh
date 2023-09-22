@@ -1,21 +1,22 @@
 #! /bin/bash
 
-# Fully upgrade a python3 environment.
+# Fully upgrade a Python environment.
 #
-# Usage: cd /path/to/python3.N
+# Usage: cd /path/to/pythonENV
 #        ./path/to/upgrade.sh
 
 FILE="requirements.txt"
+PIP=$(find bin/ -type f -iname pip* | sort --version-sort --reverse | head --lines=1)
 
-./bin/pip3 install --upgrade pip
+eval ./$PIP install --upgrade pip
 
 if [ ! -f $FILE ]; then
-  ./bin/pip3 list --format freeze > $FILE
+  eval ./$PIP list --format freeze > ${FILE}
   if [ "$(uname)" = "Darwin" ]; then
     sed -i '' 's/==/>=/g' $FILE
   else
-    sed --in-place 's/==/>=/g' $FILE
+    sed --in-place 's/==/>=/g' ${FILE}
   fi
 fi
 
-./bin/pip3 install --upgrade --requirement $FILE
+eval ./$PIP install --upgrade --requirement ${FILE}
